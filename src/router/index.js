@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import HomeView from '../views/Home.vue';
 
 const routes = [
@@ -10,7 +10,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: process.env.IS_ELECTRON ? createWebHashHistory() : createWebHistory(),
   routes,
 });
 

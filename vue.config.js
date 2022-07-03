@@ -1,9 +1,22 @@
 const { defineConfig } = require('@vue/cli-service');
 const UnoCSS = require('unocss/webpack').default;
 const { presetUno, presetAttributify } = require('unocss');
+const WorkerPlugin = require('worker-plugin');
+const path = require('path');
 module.exports = defineConfig({
   transpileDependencies: true,
+  pluginOptions: {
+    electronBuilder: {
+      preload: 'src/mainProcess/preload.js',
+    },
+  },
   configureWebpack: {
+    devtool: 'source-map',
+    resolve: {
+      alias: {
+        '@': `${path.resolve(__dirname, 'src')}`,
+      },
+    },
     plugins: [
       UnoCSS({
         presets: [presetUno(), presetAttributify()],
@@ -27,6 +40,7 @@ module.exports = defineConfig({
           'flex-start': 'flex flex-row justify-start items-center',
         },
       }),
+      new WorkerPlugin(),
     ],
   },
 });

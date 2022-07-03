@@ -1,24 +1,5 @@
-# vue3-start-template
+# vue3-electron-start-template
+1. Add unocss
+2. Add web worker plugin 
+3. Use pnpm
 
-## Project setup
-```
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
-
-### Compiles and minifies for production
-```
-pnpm run build
-```
-
-### Lints and fixes files
-```
-pnpm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

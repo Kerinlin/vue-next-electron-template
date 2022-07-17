@@ -7,7 +7,15 @@ module.exports = defineConfig({
   transpileDependencies: true,
   pluginOptions: {
     electronBuilder: {
-      preload: 'src/mainProcess/preload.js',
+      preload: 'src/preload.js',
+
+      // 可配置项 https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#configuring-electron-builder
+      builderOptions: {
+        nsis: {
+          oneClick: false, // 是否一键安装
+          allowToChangeInstallationDirectory: true, // 允许修改安装目录
+        },
+      },
     },
   },
   configureWebpack: {

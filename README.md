@@ -2,4 +2,5 @@
 1. Add unocss
 2. Add web worker plugin 
 3. Use pnpm
+4. Add preload
 
